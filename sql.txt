@@ -1,0 +1,8 @@
+//用户
+ create table user1(
+    -> id int not null auto_increment primary key,
+    -> name varchar(64) not null default " ",
+    -> age int(6) not null default 0,
+    -> telephone varchar(11) not null default " ",
+    -> password varchar(16) not null default " "
+    -> );
