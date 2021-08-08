@@ -8,4 +8,6 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
     int register(UserModel userModel);
+
+    User login(String telephone);
 }

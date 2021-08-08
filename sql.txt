@@ -6,3 +6,15 @@
     -> telephone varchar(11) not null default " ",
     -> password varchar(16) not null default " "
     -> );
+
+
+//商品信息
+ create table commodity(
+    -> id int not null auto_increment primary key,
+    -> product_name varchar(64) not null default " ",
+    -> img varchar(500) not null default " ",
+    -> bewrite varchar(64) not null default " ",
+    -> price double not null default 0,
+    -> stock int(11) not null default 0,
+    -> sales int(11) not null default 0
+    -> );
