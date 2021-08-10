@@ -6,6 +6,7 @@
     -> telephone varchar(11) not null default " ",
     -> password varchar(16) not null default " "
     -> );
+ alter table user1 add unique(telephone);   // 给telephone字段添加唯一标识
 
 
 //商品信息
@@ -17,4 +18,15 @@
     -> price double not null default 0,
     -> stock int(11) not null default 0,
     -> sales int(11) not null default 0
+    -> );
+
+
+//订单信息
+ create table ddxx(
+    -> id varchar(32) not null primary key default " ",
+    -> user_id int(32) not null default 0,
+    -> commodity_id int(32) not null default 0,
+    -> commodity_price double not null default 0,
+    -> amount int(32) not null default 0,
+    -> total_price double not null default 0
     -> );

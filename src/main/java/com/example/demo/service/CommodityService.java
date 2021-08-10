@@ -7,4 +7,6 @@ import java.util.List;
 public interface CommodityService {
 
     List<Commodity> item();
+
+    Commodity itemById(Integer id);
 }

@@ -19,4 +19,10 @@ public class CommodityServiceImpl implements CommodityService {
         List<Commodity> item = commodityMapper.select();
         return item;
     }
+
+    @Override
+    public Commodity itemById(Integer id) {
+        Commodity commodity = commodityMapper.selectByPrimaryKey(id);
+        return commodity;
+    }
 }
