@@ -30,3 +30,12 @@
     -> amount int(32) not null default 0,
     -> total_price double not null default 0
     -> );
+
+create table ddxx1(
+    -> id int not null auto_increment primary key,
+    -> user_id int(32) not null default 0,
+    -> commodity_id int(32) not null default 0,
+    -> commodity_price double not null default 0,
+    -> amount int(32) not null default 0,
+    -> total_price double not null default 0
+    -> );

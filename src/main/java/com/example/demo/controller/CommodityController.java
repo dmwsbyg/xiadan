@@ -15,10 +15,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/commodity")
 public class CommodityController {
+    //商品信息
 
     @Autowired
     private CommodityService commodityService;
 
+    //商品列表信息
     @RequestMapping(value = "/item",method = RequestMethod.GET)
     @ResponseBody
     public List<Commodity> item(){
@@ -26,6 +28,7 @@ public class CommodityController {
         return item;
     }
 
+    //商品详情信息
     @RequestMapping(value = "/itemById",method = RequestMethod.POST)
     @ResponseBody
     public Commodity itemById(@RequestParam(name = "id")Integer id){

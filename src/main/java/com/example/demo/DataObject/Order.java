@@ -8,7 +8,7 @@ public class Order {
      *
      * @mbg.generated Tue Aug 10 23:38:55 GMT+08:00 2021
      */
-    private String id;
+    private Integer id;
 
     /**
      *
@@ -63,7 +63,7 @@ public class Order {
      *
      * @mbg.generated Tue Aug 10 23:38:55 GMT+08:00 2021
      */
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -75,8 +75,8 @@ public class Order {
      *
      * @mbg.generated Tue Aug 10 23:38:55 GMT+08:00 2021
      */
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
