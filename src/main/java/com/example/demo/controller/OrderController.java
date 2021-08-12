@@ -30,10 +30,11 @@ public class OrderController {
 
     @ResponseBody
     @RequestMapping(value = "/order",method = RequestMethod.POST)
-    public String orderFrom(@RequestParam(name = "commodityId")Integer commodityId,
-                            @RequestParam(name = "amount")Integer amount){
+    public String  orderFrom(@RequestParam(name = "commodityId")Integer commodityId,
+                            @RequestParam(name = "amount")Integer amount) throws Exception {
         Boolean login = (Boolean)httpServletRequest.getSession().getAttribute("IS_LOGIN");
         System.out.println(login);
+
         if (login == null || !login.booleanValue()){
             return "用户未登入";
         }
@@ -41,7 +42,10 @@ public class OrderController {
 
         System.out.println(userModel.getId());
         System.out.println(userModel.getName());
+        commodityService.increaseInSales(commodityId,amount);
+        commodityService.reduceStock(commodityId,amount);
         Commodity commodity = commodityService.itemById(commodityId);
+
         int userId = userModel.getId();
         OrderModel orderModel = new OrderModel();
         orderModel.setUserId(userId);
@@ -55,8 +59,7 @@ public class OrderController {
         }else {
             return "下单未成功";
         }
-
-
     }
+
 
 }

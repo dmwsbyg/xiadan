@@ -162,4 +162,18 @@
       sales = #{sales,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <update id="increaseInSales" parameterType="com.example.demo.DataObject.Commodity">
+
+    update spxx
+    set sales = sales + #{amount,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="reduceStock" parameterType="com.example.demo.DataObject.Commodity">
+
+    update spxx
+    set stock = stock - #{amount,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

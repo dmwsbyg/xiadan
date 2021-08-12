@@ -1,6 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.DataObject.Commodity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -54,4 +55,8 @@ public interface CommodityMapper {
      * @mbg.generated Sun Aug 08 22:26:26 GMT+08:00 2021
      */
     int updateByPrimaryKey(Commodity record);
+
+    int increaseInSales(@Param("id")Integer id, @Param("amount")Integer amount);
+
+    int reduceStock(@Param("id")Integer id, @Param("amount")Integer amount);
 }

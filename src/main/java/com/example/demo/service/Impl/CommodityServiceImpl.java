@@ -25,4 +25,14 @@ public class CommodityServiceImpl implements CommodityService {
         Commodity commodity = commodityMapper.selectByPrimaryKey(id);
         return commodity;
     }
+
+    @Override
+    public void increaseInSales(Integer commodityId, Integer amount) {
+        commodityMapper.increaseInSales(commodityId, amount);
+    }
+
+    @Override
+    public void reduceStock(Integer commodityId, Integer amount) {
+        commodityMapper.reduceStock(commodityId,amount);
+    }
 }
